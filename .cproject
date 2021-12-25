@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="io.sloeber.core.sketch.0">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="io.sloeber.core.sketch.0" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildProperties="" cleanCommand="rm -f" description="" id="io.sloeber.core.sketch.0" name="Release" parent="io.sloeber.core.configuration.release">
+					<folderInfo id="io.sloeber.core.sketch.0." name="/" resourcePath="">
+						<toolChain id="io.sloeber.core.toolChain.release.826519491" name="Arduino Toolchain (Sloeber edition)" superClass="io.sloeber.core.toolChain.release">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="io.sloeber.targetplatform.554398401" name="Arduino Target" osList="all" superClass="io.sloeber.targetplatform"/>
+							<builder buildPath="${workspace_loc:/IR_Send}/Release" id="io.sloeber.sketch.builder.1291464970" keepEnvironmentInBuildfile="false" name="Arduino sketch builder" parallelBuildOn="false" superClass="io.sloeber.sketch.builder"/>
+							<tool id="io.sloeber.tool.sketch.compiler.cpp.1419292963" name="Arduino C++ Compiler" superClass="io.sloeber.tool.sketch.compiler.cpp">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="io.sloeber.compiler.cpp.sketch.option.incpath.486754526" name="Include Paths (-I)" superClass="io.sloeber.compiler.cpp.sketch.option.incpath" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IR_Send/core/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;E:\TestProject\Sloeber\IR_Send\src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IR_Send/core/variant}&quot;"/>
+								</option>
+								<inputType id="io.sloeber.compiler.cpp.sketch.input.2011978933" name="CPP source files" superClass="io.sloeber.compiler.cpp.sketch.input"/>
+							</tool>
+							<tool id="io.sloeber.tool.compiler.c.655354690" name="Arduino C Compiler" superClass="io.sloeber.tool.compiler.c">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="io.sloeber.compiler.c.sketch.option.incpath.421898292" name="Include Paths (-I)" superClass="io.sloeber.compiler.c.sketch.option.incpath" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IR_Send/core/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;E:\TestProject\Sloeber\IR_Send\src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IR_Send/core/variant}&quot;"/>
+								</option>
+								<inputType id="io.sloeber.compiler.c.sketch.input.1138228779" name="C Source Files" superClass="io.sloeber.compiler.c.sketch.input"/>
+							</tool>
+							<tool id="io.sloeber.tool.sketch.compiler.s.1889661234" name="Arduino Assembler" superClass="io.sloeber.tool.sketch.compiler.s">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="io.sloeber.compiler.asm.sketch.option.incpath.1391611939" name="Include Paths (-I)" superClass="io.sloeber.compiler.asm.sketch.option.incpath" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IR_Send/core/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IR_Send/core/variant}&quot;"/>
+								</option>
+								<inputType id="io.sloeber.compiler.S.sketch.input.685366247" name="Assembly source files" superClass="io.sloeber.compiler.S.sketch.input"/>
+							</tool>
+							<tool id="io.sloeber.tool.ar.944334994" name="Arduino archiver" superClass="io.sloeber.tool.ar"/>
+							<tool id="io.sloeber.tool.combine.772406141" name="Arduino combiner" superClass="io.sloeber.tool.combine"/>
+							<tool id="io.sloeber.tool.objcopy.eep.1275583241" name="Arduino tool objcopy command" superClass="io.sloeber.tool.objcopy.eep"/>
+							<tool id="io.sloeber.tool.size.252079857" name="Arduino tool Print Size" superClass="io.sloeber.tool.size"/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="io.sloeber.core.sketch.0.libraries/**/._*" resourcePath="libraries/**/._*">
+						<toolChain id="io.sloeber.core.toolChain5.1207117878" superClass="io.sloeber.core.toolChain5">
+							<targetPlatform id="io.sloeber.core.sketch.0.libraries/**/._*.1263848588" name=""/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="io.sloeber.core.sketch.0.libraries/?*/**/test*/**" resourcePath="libraries/?*/**/test*/**">
+						<toolChain id="io.sloeber.core.toolChain3.1542257534" superClass="io.sloeber.core.toolChain3">
+							<targetPlatform id="io.sloeber.core.sketch.0.libraries/?*/**/test*/**.1524353872" name=""/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="io.sloeber.core.sketch.0.libraries/?*/**/?xtras/**" resourcePath="libraries/?*/**/?xtras/**">
+						<toolChain id="io.sloeber.core.toolChain2.1909865957" superClass="io.sloeber.core.toolChain2">
+							<targetPlatform id="io.sloeber.core.sketch.0.libraries/?*/**/?xtras/**.75429454" name=""/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="io.sloeber.core.sketch.0.libraries/?*/**/?xamples/**" resourcePath="libraries/?*/**/?xamples/**">
+						<toolChain id="io.sloeber.core.toolChain1.820297032" superClass="io.sloeber.core.toolChain1">
+							<targetPlatform id="io.sloeber.core.sketch.0.libraries/?*/**/?xamples/**.515812138" name=""/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="io.sloeber.core.sketch.0.libraries/?*/**/third-party/**" resourcePath="libraries/?*/**/third-party/**">
+						<toolChain id="io.sloeber.core.toolChain4.2097075855" superClass="io.sloeber.core.toolChain4">
+							<targetPlatform id="io.sloeber.core.sketch.0.libraries/?*/**/third-party/**.677316472" name=""/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="io.sloeber.core.sketch.0.libraries/?*/utility/*/*" resourcePath="libraries/?*/utility/*/*">
+						<toolChain id="io.sloeber.core.toolChain6.1566344996" superClass="io.sloeber.core.toolChain6">
+							<targetPlatform id="io.sloeber.core.sketch.0.libraries/?*/utility/*/*.1474774854" name=""/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="libraries/?*/**/?xamples/**|libraries/?*/**/?xtras/**|libraries/?*/**/test*/**|libraries/?*/**/third-party/**|libraries/**/._*|libraries/?*/utility/*/*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="IR_Send.io.sloeber.core.sketch.1361911659" name="Arduino sketch" projectType="io.sloeber.core.sketch"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="refreshScope"/>
+</cproject>
