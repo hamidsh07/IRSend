@@ -4,6 +4,11 @@
 
 // An IRsend instance is used to send data
 IRsend sender;
+char ChoiceProtocol = -1;
+uint32_t Address;
+uint8_t Command;
+char myData[20];
+uint8_t Stop = 255;
 
 void setup()
 {
@@ -19,38 +24,107 @@ void setup()
 #if defined(ARDUINO_ARCH_STM32) || defined(ESP8266)
     Serial.println(IR_SEND_PIN_STRING);
 #else
-    Serial.print(IR_SEND_PIN);
+    Serial.println(IR_SEND_PIN);
 #endif
+    Serial.println(F("Enter 0 To finish sending"));
+    Serial.println(F("--------------------------------------------"));
 }
 
 
 void loop()
 {
 
-  /* Do other stuff */
+	ChoiceProtocol = -1;
+	Address = 0;
+	Command = 0;
+	Stop = 255;
 
-  // The following values were obtained by reading the receiver in a different sketch
-  // They correspond to the OFF button of another NEC compatible remote control
-  uint32_t Address = 0x80;
-  uint8_t Command = 0xA;
+	Serial.println(F("1 - NEC"));
+	Serial.println(F("2 - Sony"));
+	Serial.println(F("3 - Panasonic"));
+	Serial.println(F("4 - JVC"));
+	Serial.println(F("5 - Samsung"));
+	Serial.println(F("6 - LG"));
+	Serial.println(F("Select the desired protocol (from 1 to 6):"));
+	  while (ChoiceProtocol == -1) {
+		  ChoiceProtocol = Serial.read();
+	  }
+	  Serial.println(F("Enter Address :"));
+	  while (Address == 0) {
+		  byte m = Serial.readBytesUntil('\n', myData, 20);
+		  myData[m] = '\0';
+		  Address = strtol(myData, NULL, 16);
+	  }
+	  Serial.println(F("Enter Command :"));
+	  while (Command == 0) {
+		  byte m = Serial.readBytesUntil('\n', myData, 20);
+		  myData[m] = '\0';
+		  Command = strtol(myData, NULL, 16);
+	  }
 
-//  IrSender.sendNEC(Address, Command, 1);
-//  IrSender.sendSony(Address, Command, 1);
-//  IrSender.sendPanasonic(Address, Command, 1);
-//
-//  IrSender.sendJVC(Address, Command, 1);
-//
-//  IrSender.sendSamsung(Address, Command, 1);
-  IrSender.sendLG(Address, Command, 1);
+		Serial.print(F("Address :0x"));
+		Serial.println(Address, HEX);
+		Serial.print(F("Command :0x"));
+		Serial.println(Command, HEX);
 
+switch (ChoiceProtocol) {
+	case '1':
+		Serial.println(F("Protocol : NEC"));
+		while(Stop == 255){
+		  IrSender.sendNEC(Address, Command, 1);
+		  Serial.println(F("Send Data..."));
+		  delay(1000);
+		  Stop = Serial.read();
+		}
+		break;
+	case '2':
+		Serial.println(F("Protocol : Sony"));
+		while(Stop == 255){
+		  IrSender.sendSony(Address, Command, 1);
+		  Serial.println(F("Send Data..."));
+		  delay(1000);
+		  Stop = Serial.read();
+		}
+		break;
+	case '3':
+		Serial.println(F("Protocol : Panasonic"));
+		while(Stop == 255){
+		  IrSender.sendPanasonic(Address, Command, 1);
+		  Serial.println(F("Send Data..."));
+		  delay(1000);
+		  Stop = Serial.read();
+		}
+		break;
+	case '4':
+		Serial.println(F("Protocol : JVC"));
+		while(Stop == 255){
+		  IrSender.sendJVC(Address, Command, 1);
+		  Serial.println(F("Send Data..."));
+		  delay(1000);
+		  Stop = Serial.read();
+		}
+		break;
+	case '5':
+		Serial.println(F("Protocol : Samsung"));
+		while(Stop == 255){
+		  IrSender.sendSamsung(Address, Command, 1);
+		  Serial.println(F("Send Data..."));
+		  delay(1000);
+		  Stop = Serial.read();
+		}
+		break;
+	case '6':
+		Serial.println(F("Protocol : LG"));
+		while(Stop == 255){
+		  IrSender.sendLG(Address, Command, 1);
+		  Serial.println(F("Send Data..."));
+		  delay(1000);
+		  Stop = Serial.read();
+		}
+		break;
+	default:
+		break;
+}
 
-
-  delay(2000);
-  Serial.println("Send Data Again");
-
-
-
-  // To send messages using a different protocol
-  // see: https://github.com/z3t0/Arduino-IRremote/wiki/IRremote-library-API
 
 }

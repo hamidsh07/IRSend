@@ -49,7 +49,7 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 AR += \
-E:\TestProject\Sloeber\IR_Send\Release\arduino.ar \
+D:\GitHub\IRSend\Release\arduino.ar \
 
 ELF += \
 IR_Send.elf \
@@ -65,19 +65,19 @@ all: IR_Send
 IR_Send: $(HEX)
 	@echo 'Building target: $@'
 	@echo 'Printing size:'
-	"D:\Sloeber\arduinoPlugin\packages\arduino\tools\avr-gcc\7.3.0-atmel3.6.1-arduino7/bin/avr-size" -A "E:\TestProject\Sloeber\IR_Send\Release/IR_Send.elf"
+	"D:\Sloeber\arduinoPlugin\packages\arduino\tools\avr-gcc\7.3.0-atmel3.6.1-arduino7/bin/avr-size" -A "D:\GitHub\IRSend\Release/IR_Send.elf"
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-E:\TestProject\Sloeber\IR_Send\Release\arduino.ar: $(AR_OBJ)
+D:\GitHub\IRSend\Release\arduino.ar: $(AR_OBJ)
 	@echo 'Starting archiver'
-	"D:\Sloeber\arduinoPlugin\packages\arduino\tools\avr-gcc\7.3.0-atmel3.6.1-arduino7/bin/avr-gcc-ar" rcs     E:\TestProject\Sloeber\IR_Send\Release/arduino.ar $(AR_OBJ)
+	"D:\Sloeber\arduinoPlugin\packages\arduino\tools\avr-gcc\7.3.0-atmel3.6.1-arduino7/bin/avr-gcc-ar" rcs     D:\GitHub\IRSend\Release/arduino.ar $(AR_OBJ)
 	@echo 'Finished building: $@'
 	@echo ' '
 
 IR_Send.elf: $(LINK_OBJ) $(AR)
 	@echo 'Starting combiner'
-	"D:\Sloeber\arduinoPlugin\packages\arduino\tools\avr-gcc\7.3.0-atmel3.6.1-arduino7/bin/avr-gcc" -w -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega328p   -o "E:\TestProject\Sloeber\IR_Send\Release/IR_Send.elf"   $(LINK_OBJ)    E:\TestProject\Sloeber\IR_Send\Release/arduino.ar  "-LE:\TestProject\Sloeber\IR_Send\Release" -lm
+	"D:\Sloeber\arduinoPlugin\packages\arduino\tools\avr-gcc\7.3.0-atmel3.6.1-arduino7/bin/avr-gcc" -w -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega328p   -o "D:\GitHub\IRSend\Release/IR_Send.elf"   $(LINK_OBJ)    D:\GitHub\IRSend\Release/arduino.ar  "-LD:\GitHub\IRSend\Release" -lm
 	@echo 'Finished building: $@'
 	@echo ' '
 
