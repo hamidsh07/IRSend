@@ -9,6 +9,7 @@ uint32_t Address;
 uint8_t Command;
 char myData[20];
 uint8_t Stop = 255;
+uint8_t CNT;
 
 void setup()
 {
@@ -27,7 +28,6 @@ void setup()
     Serial.println(IR_SEND_PIN);
 #endif
     Serial.println(F("Enter 0 To finish sending"));
-    Serial.println(F("--------------------------------------------"));
 }
 
 
@@ -38,7 +38,9 @@ void loop()
 	Address = 0;
 	Command = 0;
 	Stop = 255;
+	CNT = 0;
 
+	Serial.println(F("--------------------------------------------"));
 	Serial.println(F("1 - NEC"));
 	Serial.println(F("2 - Sony"));
 	Serial.println(F("3 - Panasonic"));
@@ -61,68 +63,87 @@ void loop()
 		  myData[m] = '\0';
 		  Command = strtol(myData, NULL, 16);
 	  }
-
-		Serial.print(F("Address :0x"));
+	  Serial.println(F("------- IR Codes Info -------"));
+		Serial.print(F("Address : 0x"));
 		Serial.println(Address, HEX);
-		Serial.print(F("Command :0x"));
+		Serial.print(F("Command : 0x"));
 		Serial.println(Command, HEX);
 
 switch (ChoiceProtocol) {
 	case '1':
 		Serial.println(F("Protocol : NEC"));
+		Serial.println(F("--------------------------------"));
 		while(Stop == 255){
 		  IrSender.sendNEC(Address, Command, 1);
-		  Serial.println(F("Send Data..."));
-		  delay(1000);
+		  Serial.print(F("Sending IR Codes---> "));
+		  Serial.println(CNT);
+		  CNT++;
+		  delay(5000);
 		  Stop = Serial.read();
 		}
 		break;
 	case '2':
 		Serial.println(F("Protocol : Sony"));
+		Serial.println(F("--------------------------------"));
 		while(Stop == 255){
 		  IrSender.sendSony(Address, Command, 1);
-		  Serial.println(F("Send Data..."));
-		  delay(1000);
+		  Serial.print(F("Sending IR Codes---> "));
+		  Serial.println(CNT);
+		  CNT++;
+		  delay(5000);
 		  Stop = Serial.read();
 		}
 		break;
 	case '3':
 		Serial.println(F("Protocol : Panasonic"));
+		Serial.println(F("--------------------------------"));
 		while(Stop == 255){
 		  IrSender.sendPanasonic(Address, Command, 1);
-		  Serial.println(F("Send Data..."));
-		  delay(1000);
+		  Serial.print(F("Sending IR Codes---> "));
+		  Serial.println(CNT);
+		  CNT++;
+		  delay(5000);
 		  Stop = Serial.read();
 		}
 		break;
 	case '4':
 		Serial.println(F("Protocol : JVC"));
+		Serial.println(F("--------------------------------"));
 		while(Stop == 255){
 		  IrSender.sendJVC(Address, Command, 1);
-		  Serial.println(F("Send Data..."));
-		  delay(1000);
+		  Serial.print(F("Sending IR Codes---> "));
+		  Serial.println(CNT);
+		  CNT++;
+		  delay(5000);
 		  Stop = Serial.read();
 		}
 		break;
 	case '5':
 		Serial.println(F("Protocol : Samsung"));
+		Serial.println(F("--------------------------------"));
 		while(Stop == 255){
 		  IrSender.sendSamsung(Address, Command, 1);
-		  Serial.println(F("Send Data..."));
-		  delay(1000);
+		  Serial.print(F("Sending IR Codes---> "));
+		  Serial.println(CNT);
+		  CNT++;
+		  delay(5000);
 		  Stop = Serial.read();
 		}
 		break;
 	case '6':
 		Serial.println(F("Protocol : LG"));
+		Serial.println(F("--------------------------------"));
 		while(Stop == 255){
 		  IrSender.sendLG(Address, Command, 1);
-		  Serial.println(F("Send Data..."));
-		  delay(1000);
+		  Serial.print(F("Sending IR Codes---> "));
+		  Serial.println(CNT);
+		  CNT++;
+		  delay(5000);
 		  Stop = Serial.read();
 		}
 		break;
 	default:
+		Serial.println(F("Please enter the correct protocol number : (from 1 to 6)"));
 		break;
 }
 
