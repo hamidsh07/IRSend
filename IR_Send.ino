@@ -14,7 +14,19 @@ uint8_t CNT;
 void setup()
 {
 	Serial.begin(115200);
-
+	delay(1000);
+	Serial.println("** Introduction");
+	Serial.println("**");
+    Serial.println("** Project   	      : Sending IR Codes");
+    Serial.println("** Developer 	      : Hamid Sheibani");
+    Serial.println("** Advisor            : Mr Yazdanbakhsh");
+    Serial.println("** Company   	      : Faham");
+    Serial.println("** Website   	      : www.fahamsmart.ir");
+    Serial.println("** Date 	      : 27/12/2021");
+    Serial.print(F("** library version    : 1.0.0"));
+    Serial.println("");
+    Serial.println("**");
+	Serial.println("***************************");
 #if defined(IR_SEND_PIN)
     IrSender.begin(); // Start with IR_SEND_PIN as send pin and enable feedback LED at default feedback LED pin
 #else
