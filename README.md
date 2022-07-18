@@ -13,6 +13,8 @@ Send command:
 
 ![image](https://user-images.githubusercontent.com/19682794/179561459-2b79b6a9-4a5e-48ef-8128-6d38bea8499c.png)
 
+The desired IR signal is sent once every 5 seconds
+
 ![image](https://user-images.githubusercontent.com/19682794/179561511-fed447e1-ae89-4c6f-a9eb-58ae9dfef17d.png)
 
 Hookup:
